@@ -1,7 +1,5 @@
 const express = require('express');
 
-require('../config/db');
-
 const router = express.Router();
 const tasksRoutes = require('./tasks.routes');
 
