@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "APP_PORT=8080 ENV=___DEV___  nodemon app.js",
+    "docker": "docker-compose up --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,12 +17,16 @@
   "author": "Cristhian Valencia",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "mongoose": "^5.12.13"
   },
   "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "nodemon": "^2.0.7"
   }
 }

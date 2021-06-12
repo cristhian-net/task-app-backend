@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: 'mongodb://mongo:27017/truenorth-mongo-test'
+  mongoURI: 'mongodb://mongo:27017/truenorth-mongo-test',
 };
