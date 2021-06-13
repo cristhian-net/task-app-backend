@@ -11,3 +11,6 @@ For it to work with our database, we may need to install MongoDB locally, or jus
 
 ## Running with docker
 Run `npm run docker` and the app will start listening on port `3001`. A local MongoDB container will start running as well on port `27017`.
+
+## Testing
+Run `npm test` to run the tests

@@ -5,9 +5,12 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "APP_PORT=8080 ENV=___DEV___  nodemon app.js",
-    "docker": "docker-compose up --build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "env-cmd ./config/dev.env nodemon app.js",
+    "docker": "env-cmd ./config/docker.env docker-compose up --build",
+    "test": "env-cmd ./config/test.env jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [
     "task",
@@ -19,6 +22,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
+    "env-cmd": "^8.0.2",
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "mongoose": "^5.12.13"
@@ -27,6 +31,8 @@
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^23.6.0",
     "nodemon": "^2.0.7"
   }
 }
