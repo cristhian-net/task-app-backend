@@ -1,4 +1,5 @@
 const TaskModel = require('../models/task.model');
+const tasksService = require('../services/tasks.service');
 
 const getAll = async (_, res) => {
   console.log('GET api/tasks');
@@ -9,11 +10,7 @@ const insert = async (req, res) => {
   try {
     console.log('POST api/tasks');
     const { title } = req.body;
-    const task = new TaskModel({
-      title,
-    });
-    task.save();
-    console.log('Finished creating task');
+    const task = await tasksService.createTask({ title });
     return res.status(201).json(task);
   } catch (error) {
     console.error(error);
