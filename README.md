@@ -14,3 +14,7 @@ Run `npm run docker` and the app will start listening on port `3001`. A local Mo
 
 ## Testing
 Run `npm run integration` to run the integration tests
+
+## API interface
+
+The app serves a Swagger documentation endpoint at the root of the API. (e.g. http://localhost:3001/)
