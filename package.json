@@ -20,12 +20,14 @@
   "author": "Cristhian Valencia",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "env-cmd": "^8.0.2",
     "express": "^4.17.1",
     "joi": "^17.4.0",
-    "mongoose": "^5.12.13"
+    "mongoose": "^5.12.13",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.28.0",
