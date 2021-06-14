@@ -10,7 +10,6 @@ const createTask = async ({ title }) => {
       title,
     });
     await task.save();
-    console.log('Finished creating task');
     return task;
   }
   return {};
@@ -22,7 +21,6 @@ const getNewTasksAndFetchAll = async (qty) => {
     return allDbTasks.filter((_, index) => index < qty);
   }
   const requiredTasksQty = Number(qty) - allDbTasks.length;
-  console.log('requiredTasksQty', requiredTasksQty);
   const newTasks = [];
   do {
     // This particular API does not support parallel executions,
@@ -33,7 +31,6 @@ const getNewTasksAndFetchAll = async (qty) => {
       newTasks.push(task);
     }
   } while (newTasks.length < requiredTasksQty);
-  console.log('length:', newTasks.length);
   const tasksDbPromises = [];
   for (let j = 0; j < newTasks.length; j += 1) {
     const element = newTasks[j];

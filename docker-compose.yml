@@ -9,10 +9,14 @@ services:
       - '3001:8082'
     links:
       - mongo
+    env_file: 
+      - './config/docker.env'
     environment:
       WAIT_HOSTS: mongo:27017
   mongo:
     container_name: truenorth-mongo
     image: mongo:4.4.6
+    volumes:
+      - './data:/data/db'
     ports:
       - '27017:27017'

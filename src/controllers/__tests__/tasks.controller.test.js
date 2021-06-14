@@ -3,6 +3,8 @@ const request = require('supertest');
 const app = require('../../app');
 const TaskModel = require('../../models/task.model');
 
+jest.mock('../../services/hipsum-api.service');
+
 const taskOne = {
   title: 'testing',
 };
@@ -19,13 +21,11 @@ beforeEach(async () => {
 afterAll(async () => { await mongoose.connection.close(); });
 
 describe('Tasks Controller', () => {
-  it('should return 200 when getting tasks', async () => {
-    await request(app)
-      .get('/api/tasks')
-      .set('Accept', 'application/json')
-      .expect('Content-Type', /json/)
-      .expect(200);
-  });
+  it('should return 200 when getting tasks', async () => request(app)
+    .get('/api/tasks')
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .expect(200));
 
   it('should return at least 3 tasks if no arguments', async () => {
     const res = await request(app)

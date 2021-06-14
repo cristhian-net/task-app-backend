@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "env-cmd ./config/dev.env nodemon index.js",
-    "docker": "env-cmd ./config/docker.env docker-compose up --build",
-    "test": "env-cmd ./config/test.env jest --detectOpenHandles"
+    "docker": "docker-compose up --build",
+    "integration": "docker-compose up -d mongo && env-cmd ./config/test.env jest && docker-compose down"
   },
   "jest": {
     "testEnvironment": "node"
